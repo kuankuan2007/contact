@@ -1,0 +1,32 @@
+{
+  "contact": {
+    "email": {
+      "zh-cn": "邮箱",
+      "en-us": "Email"
+    },
+    "qq": {
+      "zh-cn": "QQ",
+      "en-us": "QQ"
+    },
+    "x": {
+      "zh-cn": "X",
+      "en-us": "X"
+    },"github": {
+      "zh-cn": "GitHub",
+      "en-us": "GitHub"
+    },"douyin": {
+      "zh-cn": "抖音",
+      "en-us": "TikTok"
+    }
+  },
+  "contact-type": {
+    "personal": {
+      "zh-cn": "个人",
+      "en-us": "Personal"
+    },
+    "furry": {
+      "zh-cn": "福瑞",
+      "en-us": "Furry"
+    }
+  }
+}
