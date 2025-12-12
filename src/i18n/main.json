@@ -11,12 +11,66 @@
     "x": {
       "zh-cn": "X",
       "en-us": "X"
-    },"github": {
+    },
+    "github": {
       "zh-cn": "GitHub",
       "en-us": "GitHub"
-    },"douyin": {
+    },
+    "douyin": {
       "zh-cn": "抖音",
       "en-us": "TikTok"
+    },
+    "wechat": {
+      "zh-cn": "微信",
+      "en-us": "WeChat"
+    },
+    "bilibili": {
+      "zh-cn": "B站",
+      "en-us": "Bilibili"
+    },
+    "gitee": {
+      "zh-cn": "Gitee",
+      "en-us": "Gitee"
+    },
+    "gitcode": {
+      "zh-cn": "GitCode",
+      "en-us": "GitCode"
+    },
+    "npm": {
+      "zh-cn": "NPM",
+      "en-us": "NPM"
+    },
+    "pypi": {
+      "zh-cn": "PyPI",
+      "en-us": "PyPI"
+    },
+    "youtube": {
+      "zh-cn": "YouTube",
+      "en-us": "YouTube"
+    },"kuaishou": {
+      "zh-cn": "快手",
+      "en-us": "Kwai"
+    }, "bluesky": {
+      "zh-cn": "Bluesky",
+      "en-us": "Bluesky"
+    }
+  },
+  "contact-group": {
+    "general": {
+      "zh-cn": "通用",
+      "en-us": "General"
+    },
+    "developer": {
+      "zh-cn": "开发者",
+      "en-us": "Developer"
+    },
+    "furry": {
+      "zh-cn": "福瑞",
+      "en-us": "Furry"
+    },
+    "social": {
+      "zh-cn": "社交媒体",
+      "en-us": "Social Media"
     }
   },
   "contact-type": {
@@ -27,6 +81,96 @@
     "furry": {
       "zh-cn": "福瑞",
       "en-us": "Furry"
+    }
+  },
+  "settings": {
+    "devices": {
+      "mobile": {
+        "zh-cn": "移动设备",
+        "en-us": "Mobile"
+      },
+      "desktop": {
+        "zh-cn": "桌面设备",
+        "en-us": "Desktop"
+      }
+    },
+    "platforms": {
+      "open-harmony": {
+        "zh-cn": "鸿蒙",
+        "en-us": "Open Harmony"
+      },
+      "android": {
+        "zh-cn": "安卓",
+        "en-us": "Android"
+      },
+      "windows": {
+        "zh-cn": "Windows",
+        "en-us": "Windows"
+      },
+      "ios": {
+        "zh-cn": "iOS",
+        "en-us": "iOS"
+      },
+      "macos": {
+        "zh-cn": "macOS",
+        "en-us": "macOS"
+      },
+      "ubuntu": {
+        "zh-cn": "Ubuntu",
+        "en-us": "Ubuntu"
+      },
+      "unknown": {
+        "zh-cn": "未知系统",
+        "en-us": "Unknown"
+      }
+    },
+    "string": {
+      "devices": {
+        "zh-cn": "设备",
+        "en-us": "Device"
+      },
+      "platform": {
+        "zh-cn": "系统",
+        "en-us": "OS"
+      },
+      "settings": {
+        "zh-cn": "设置",
+        "en-us": "Settings"
+      }
+    }
+  },
+  "string": {
+    "ele-title": {
+      "copy": {
+        "zh-cn": "复制",
+        "en-us": "Copy"
+      },
+      "copied": {
+        "zh-cn": "已复制",
+        "en-us": "Copied"
+      },
+      "qrcode": {
+        "zh-cn": "二维码",
+        "en-us": "QR Code"
+      },
+      "link-jump": {
+        "zh-cn": "跳转",
+        "en-us": "Jump"
+      }
+    },
+    "message": {
+      "copy-success": {
+        "zh-cn": "复制成功",
+        "en-us": "Copied"
+      },
+      "copy-failed": {
+        "zh-cn": "复制失败",
+        "en-us": "Copy Failed"
+      },
+      "running-on-harmonyos": {
+        "zh-cn": "鸿蒙系统暂不支持应用拉起",
+        "en-us": "App launching is not currently supported on HarmonyOS"
+      }
     }
   }
 }

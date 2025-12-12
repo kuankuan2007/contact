@@ -2,7 +2,7 @@
   <div class="background">
     <div class="background-inner">
       <div class="logo">
-        <img src="@/assets/logo.svg" alt="logo"></img>
+        <img src="@/assets/logo.svg" alt="logo" />
       </div>
       <div class="furry" v-html="furrySvg"></div>
     </div>
@@ -16,6 +16,7 @@ import furrySvg from '@/assets/furry-mask.svg?raw';
 @use 'sass:color';
 
 .background {
+  pointer-events: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -37,20 +38,26 @@ import furrySvg from '@/assets/furry-mask.svg?raw';
   bottom: 0;
   width: 40em;
   height: auto;
-  filter: blur(0.15em);
-  mix-blend-mode: difference;
+  opacity: 0.1;
 
   @include useTheme {
-    fill: color.mix(getTheme('background'), getTheme('color'), 90%);
+    filter: drop-shadow(getTheme('color') 0 0 0.3em);
+  }
+
+  &:deep(svg) {
+    @include useTheme {
+      fill: getTheme('color');
+      color: getTheme('color');
+    }
   }
 }
 
 .logo {
   position: absolute;
   inset: 0;
-  width: 100vw;
+  width: min(100vw, 100vh);
   height: auto;
   opacity: 0.05;
-  mask: linear-gradient(to right bottom, black, transparent 40em);
+  mask: linear-gradient(to right bottom, black, transparent min(100vw, 80vh));
 }
 </style>

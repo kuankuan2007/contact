@@ -1,22 +1,31 @@
 <template>
   <div class="way-cmp" :class="{ 'has-link': link }">
-    <a class="way-link" :href="link || '#'" target="_blank" @click="onClick">
-      <div class="way-type" v-if="info.type">{{ $t(info.type) }}<span class="sep">:</span></div>
+    <a class="way-link" :href="link || '#'" target="_blank" @click="onClick" :title="$t(linkTitle)" tabindex="0">
+      <div class="way-type" v-if="info.type">{{ $t(`contact-type.${info.type}`) }}<span class="sep">:</span></div>
       <div class="way-main">{{ info.main }}</div>
     </a>
-    <k-copy class="copy-button" v-if="info.copy !== null" :content="info.copy || info.main" ref="copyRef" />
+    <k-copy class="copy-button" v-if="info.copy !== null" :content="info.copy || info.main" ref="copyRef"
+      @show-success:change="copyShowSuccess = $event" />
     <k-qrcode class="qrcode-button" v-if="!(info.qrcode === null || info.qrcode === void 0 && !link)"
       :data="info.qrcode || link || info.main" :text="info.main" :title="title" />
   </div>
 </template>
 <script setup lang="ts">
 import type { ContactInfo } from '@/scripts/contact';
-import { getLink } from '../scripts/link';
+import { getLinkRef } from '../scripts/link';
 import KCopy from './KCopy.vue';
 import KQrcode from './KQrcode.vue';
 const props = defineProps<{ info: ContactInfo, title: string }>()
 const copyRef = useTemplateRef('copyRef')
-const link = computed(() => getLink(props.info.link));
+const link = getLinkRef(props.info.link);
+const copyShowSuccess = ref(false);
+const linkTitle = computed(() => {
+  const showSuccess = copyShowSuccess.value;
+  if (link.value) {
+    return 'string.ele-title.link-jump'
+  }
+  return showSuccess ? 'string.ele-title.copied' : 'string.ele-title.copy'
+})
 function onClick(event: MouseEvent) {
   if (!link.value) {
     event.preventDefault();
@@ -38,7 +47,7 @@ a.way-link {
   text-decoration: none;
   transition: color 0.3s;
   padding-bottom: 0.1em;
-
+  outline: none;
   position: relative;
 
   display: flex;

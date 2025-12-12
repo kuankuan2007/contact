@@ -1,6 +1,6 @@
 <template>
   <div>
-    <k-small-button type="button" class="qrcode-button" @click.stop="show">
+    <k-small-button type="button" class="qrcode-button" @click.stop="show" :title="$t('string.ele-title.qrcode')">
       <k-icon id="qrcode" />
     </k-small-button>
     <k-dialog ref="dialogRef">
@@ -47,12 +47,17 @@ defineExpose({
   align-items: center;
   flex-direction: column;
   padding: 1em;
-  border-radius: 1em;
+
 
   .qrcode-image {
     border-radius: 1em;
     overflow: hidden;
-    width: 30vw;
+    width: min(30vw, 30vh, 20rem);
+
+    @supports (corner-shape: squircle) {
+      corner-shape: squircle;
+      border-radius: 2.5em;
+    }
   }
 
   .qrcode-text-box {

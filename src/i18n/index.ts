@@ -24,7 +24,7 @@ function getBrowserLanguage() {
       return i;
     }
     if (_langsOnly.includes(i)) {
-      return langs[_langsOnly.indexOf(i)]!
+      return langs[_langsOnly.indexOf(i)]!;
     }
   }
   return langs[0] || 'en-us';
@@ -36,7 +36,7 @@ if (localSettingLanguage.value !== '_auto' && !langs.includes(localSettingLangua
 }
 export const language = computed({
   get: () => {
-    const currentBrowserLanguage=browserLanguage.value;
+    const currentBrowserLanguage = browserLanguage.value;
     if (localSettingLanguage.value === '_auto') {
       return currentBrowserLanguage;
     }
@@ -59,3 +59,9 @@ export const i18n = createI18n({
 window.addEventListener('languagechange', () => {
   browserLanguage.value = getBrowserLanguage();
 });
+export function t(key: string) {
+  return i18n.global.t(key);
+}
+export function tRef(key: string) {
+  return computed(() => i18n.global.t(key));
+}

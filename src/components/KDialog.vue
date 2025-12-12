@@ -30,6 +30,11 @@ dialog {
   outline: none;
   border-radius: 2em;
 
+  @supports (corner-shape: squircle) {
+    corner-shape: squircle;
+    border-radius: 5em;
+  }
+
   @include useTheme {
     background: getTheme('background');
     color: getTheme('color');
@@ -43,8 +48,8 @@ dialog {
 
 .dialog-close {
   position: absolute;
-  top: 0.5em;
-  right: 0.5em;
+  top: 0.8em;
+  right: 0.8em;
   transition: color 0.3s;
   z-index: 1;
 

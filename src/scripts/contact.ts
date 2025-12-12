@@ -10,7 +10,7 @@ export type ContactInfoList = { name: string; data: ContactInfo[] }[];
 
 class Email implements ContactInfo {
   link: Links;
-  copy = null;
+  qrcode = null;
   constructor(
     public main: string,
     public type: string | undefined = void 0
@@ -18,20 +18,17 @@ class Email implements ContactInfo {
     this.link = `mailto:${main}`;
   }
 }
-const mainContactInfoList: ContactInfoList = [
+export const mainContactInfoList: ContactInfoList = [
   {
-    name: 'contact.email',
-    data: [
-      new Email('3169748076@qq.com', 'contact-type.furry'),
-      new Email('2163826131@qq.com', 'contact-type.personal'),
-    ],
+    name: 'email',
+    data: [new Email('3169748076@qq.com', 'furry'), new Email('2163826131@qq.com', 'personal')],
   },
   {
-    name: 'contact.qq',
+    name: 'qq',
     data: [
       {
         main: '3169748076',
-        type: 'contact-type.furry',
+        type: 'furry',
         link: [
           {
             on: ['platform:open-harmony'],
@@ -50,7 +47,7 @@ const mainContactInfoList: ContactInfoList = [
       },
       {
         main: '2163826131',
-        type: 'contact-type.personal',
+        type: 'personal',
         link: [
           {
             on: ['platform:open-harmony'],
@@ -70,7 +67,26 @@ const mainContactInfoList: ContactInfoList = [
     ],
   },
   {
-    name: 'contact.x',
+    name: 'wechat',
+    data: [
+      {
+        main: 'furrykuankuan',
+        qrcode: 'https://u.wechat.com/MKB8MRTsX2UlHzeUXpW3cd4',
+        type: 'furry',
+      },
+      {
+        main: 'gouhaoming2007',
+        type: 'personal',
+        qrcode: 'https://u.wechat.com/MA68wczc7MHT02gN6WUPDWQ?s=3',
+      },
+    ],
+  },
+  {
+    name: 'douyin',
+    data: [{ main: 'kuankuan2007', link: 'https://v.douyin.com/Sjk3L8fgp3g/' }],
+  },
+  {
+    name: 'x',
     data: [
       {
         main: 'kuankuan2007',
@@ -80,12 +96,108 @@ const mainContactInfoList: ContactInfoList = [
     ],
   },
   {
-    name: 'contact.github',
+    name: 'bilibili',
+    data: [{ main: 'kuankuan2007', link: 'https://space.bilibili.com/662698080' }],
+  },
+  {
+    name: 'youtube',
+    data: [
+      {
+        main: 'kuankuan2007',
+        link: 'https://www.youtube.com/@kuankuan2007',
+      },
+    ],
+  },
+  {
+    name: 'kuaishou',
+    data: [{ main: 'kuankuan2007', link: 'https://v.kuaishou.com/KDGp3jb5' }],
+  },
+  {
+    name: 'github',
     data: [{ main: 'kuankuan2007', link: 'https://github.com/kuankuan2007' }],
   },
   {
-    name: 'contact.douyin',
-    data: [{ main: 'kuankuan2007', link: 'https://v.douyin.com/Sjk3L8fgp3g/' }],
+    name: 'gitee',
+    data: [{ main: 'kuankuan2007', link: 'https://gitee.com/kuankuan2007' }],
+  },
+  {
+    name: 'gitcode',
+    data: [{ main: 'kuankuan2007', link: 'https://gitcode.com/kuankuan2007' }],
+  },
+  {
+    name: 'npm',
+    data: [{ main: 'kuankuan', link: 'https://www.npmjs.com/~kuankuan' }],
+  },
+  {
+    name: 'pypi',
+    data: [{ main: 'kuankuan', link: 'https://pypi.org/user/kuankuan' }],
   },
 ];
-export default mainContactInfoList;
+export const contactGroupConfig: {
+  name: string;
+  data: (string | { id: string; type: (string | { src: string; target: string | undefined })[] })[];
+}[] = [
+  {
+    name: 'general',
+    data: ['qq', 'wechat', 'email', 'douyin', 'x', 'github'],
+  },
+
+  {
+    name: 'developer',
+    data: ['github', 'gitee', 'gitcode', 'npm', 'pypi'],
+  },
+
+  {
+    name: 'furry',
+    data: [
+      { id: 'qq', type: [{ src: 'furry', target: void 0 }] },
+      { id: 'wechat', type: [{ src: 'furry', target: void 0 }] },
+      { id: 'email', type: [{ src: 'furry', target: void 0 }] },
+      'douyin',
+      'bilibili',
+    ],
+  },
+  {
+    name: 'social',
+    data: ['douyin', 'x', 'bilibili', 'youtube', 'kuaishou'],
+  },
+];
+export const groupedContactInfoList: {
+  name: string;
+  data: ContactInfoList;
+}[] = contactGroupConfig.map((group) => {
+  return {
+    name: group.name,
+    data: group.data
+      .map((item) => {
+        const target = mainContactInfoList.find((i) =>
+          typeof item === 'string' ? i.name === item : i.name === item.id
+        )!;
+        if (typeof item === 'string') {
+          return target;
+        } else {
+          return {
+            name: target.name,
+            data: target.data
+              .map((info) => {
+                const match = item.type.find((i) =>
+                  typeof i === 'string' ? info.type === i : info.type === i.src
+                );
+                if (match === void 0) {
+                  return void 0;
+                }
+                if (typeof match === 'string') {
+                  return info;
+                }
+                return {
+                  ...info,
+                  type: match.target,
+                };
+              })
+              .filter((i) => i !== void 0),
+          };
+        }
+      })
+      .filter(Boolean),
+  };
+});
