@@ -22,11 +22,11 @@ function changeToNextTheme() {
 
 button.theme-button {
   position: fixed;
-  top: 1em;
-  left: 1em;
+  top: 0.8em;
+  left: 0.8em;
   appearance: none;
   all: unset;
-  font-size: 1.2em;
+  font-size: 1.25em;
   cursor: pointer;
   transition: 0.3s;
   padding: 0.1em;
