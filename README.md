@@ -1,3 +1,3 @@
-# Timeline
+# Contact
 
-这是我的参展计划
+This page is used to display my contact information for easy sharing
