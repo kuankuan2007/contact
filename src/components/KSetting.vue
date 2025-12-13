@@ -27,7 +27,7 @@
         </template>
       </k-folding-list>
     </div>
-    <div class="button" tabindex="0" @mouseenter="($event.currentTarget as HTMLElement)?.focus()">
+    <div class="button" tabindex="0" @mouseenter="($event.currentTarget as HTMLElement)?.focus()" @click="onButtonClick">
       <k-icon id="setting" />
       <div class="setting-title-box">
         <div class="setting-title">{{ $t('settings.string.settings') }}</div>
@@ -39,8 +39,21 @@
 import KIcon from './KIcon.vue';
 import KFoldingList from './KFoldingList.vue';
 import { platformsData, devicesData, nowEnv } from '@/scripts/device';
+const DEBUG_CLICK_GAP = 2000;
+const DEBUG_CLICK_NUM = 3;
 
 const isActive = ref(false);
+const emit = defineEmits<{ showDebug: [] }>()
+const clickHistory: number[] = []
+function onButtonClick() {
+  while (clickHistory.length && clickHistory[0]! < Date.now() - DEBUG_CLICK_GAP) {
+    clickHistory.shift()
+  }
+  clickHistory.push(Date.now())
+  if (clickHistory.length >= DEBUG_CLICK_NUM) {
+    emit('showDebug')
+  }
+}
 </script>
 <style scoped lang="scss">
 .k-setting {
