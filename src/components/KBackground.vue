@@ -36,7 +36,7 @@ import furrySvg from '@/assets/furry-mask.svg?raw';
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 40em;
+  width: min(40em, 100vw);
   height: auto;
   opacity: 0.1;
 
