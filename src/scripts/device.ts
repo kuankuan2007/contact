@@ -41,6 +41,7 @@ function getDevice(): DeviceType {
   }
   return 'desktop';
 }
+
 export const nowEnv = ref<{ platform: PlatformType; device: DeviceType }>({
   platform: getPlatform(),
   device: getDevice(),
@@ -56,6 +57,18 @@ watch(
   },
   { immediate: true }
 );
+let torchTipShown = false;
+
+function torchTip() {
+  if (nowEnv.value.device === 'desktop' && !torchTipShown) {
+    torchTipShown = true;
+    window.removeEventListener('touchstart', torchTip);
+    emitEvent(tRef('string.message.touch-tip'), 'info');
+  }
+}
+
+window.addEventListener('touchstart', torchTip);
+
 export const platformsData = platforms.map((i) => ({
   id: i,
   name: tRef(`settings.platforms.${i}`),
