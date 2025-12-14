@@ -7,6 +7,7 @@ export const languageName = {
     (): string => `Auto (${languageName[browserLanguage.value as keyof typeof languageName]})`
   ),
   'zh-cn': '简体中文',
+  'zh-tw': '繁體中文',
   'en-us': 'English',
 };
 

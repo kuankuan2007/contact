@@ -2,86 +2,106 @@
   "contact": {
     "email": {
       "zh-cn": "邮箱",
+      "zh-tw": "電子郵件",
       "en-us": "Email"
     },
     "qq": {
       "zh-cn": "QQ",
+      "zh-tw": "QQ",
       "en-us": "QQ"
     },
     "x": {
       "zh-cn": "X",
+      "zh-tw": "X",
       "en-us": "X"
     },
     "github": {
       "zh-cn": "GitHub",
+      "zh-tw": "GitHub",
       "en-us": "GitHub"
     },
     "douyin": {
       "zh-cn": "抖音",
+      "zh-tw": "抖音",
       "en-us": "TikTok"
     },
     "wechat": {
       "zh-cn": "微信",
+      "zh-tw": "微信",
       "en-us": "WeChat"
     },
     "bilibili": {
       "zh-cn": "B站",
+      "zh-tw": "嗶哩嗶哩",
       "en-us": "Bilibili"
     },
     "gitee": {
       "zh-cn": "Gitee",
+      "zh-tw": "Gitee",
       "en-us": "Gitee"
     },
     "gitcode": {
       "zh-cn": "GitCode",
+      "zh-tw": "GitCode",
       "en-us": "GitCode"
     },
     "npm": {
       "zh-cn": "NPM",
+      "zh-tw": "NPM",
       "en-us": "NPM"
     },
     "pypi": {
       "zh-cn": "PyPI",
+      "zh-tw": "PyPI",
       "en-us": "PyPI"
     },
     "youtube": {
       "zh-cn": "YouTube",
+      "zh-tw": "YouTube",
       "en-us": "YouTube"
     },
     "kuaishou": {
       "zh-cn": "快手",
+      "zh-tw": "快手",
       "en-us": "Kwai"
     },
     "bluesky": {
       "zh-cn": "Bluesky",
+      "zh-tw": "Bluesky",
       "en-us": "Bluesky"
     }
   },
   "contact-group": {
     "general": {
       "zh-cn": "通用",
+      "zh-tw": "通用",
       "en-us": "General"
     },
     "developer": {
       "zh-cn": "开发者",
+      "zh-tw": "開發者",
       "en-us": "Developer"
     },
     "furry": {
       "zh-cn": "福瑞",
+      "zh-tw": "福瑞",
       "en-us": "Furry"
     },
     "social": {
       "zh-cn": "社交媒体",
+      "zh-tw": "社交媒體",
       "en-us": "Social Media"
     }
   },
   "contact-type": {
     "personal": {
       "zh-cn": "个人",
+      "zh-tw": "個人",
       "en-us": "Personal"
     },
     "furry": {
       "zh-cn": "福瑞",
+      "zh-tw": "福瑞",
       "en-us": "Furry"
     }
   },
@@ -89,54 +109,66 @@
     "devices": {
       "mobile": {
         "zh-cn": "移动设备",
+        "zh-tw": "行動裝置",
         "en-us": "Mobile"
       },
       "desktop": {
         "zh-cn": "桌面设备",
+        "zh-tw": "桌面裝置",
         "en-us": "Desktop"
       }
     },
     "platforms": {
       "open-harmony": {
         "zh-cn": "鸿蒙",
+        "zh-tw": "鴻蒙",
         "en-us": "Open Harmony"
       },
       "android": {
         "zh-cn": "安卓",
+        "zh-tw": "Android",
         "en-us": "Android"
       },
       "windows": {
         "zh-cn": "Windows",
+        "zh-tw": "Windows",
         "en-us": "Windows"
       },
       "ios": {
         "zh-cn": "iOS",
+        "zh-tw": "iOS",
         "en-us": "iOS"
       },
       "macos": {
         "zh-cn": "macOS",
+        "zh-tw": "macOS",
         "en-us": "macOS"
       },
       "ubuntu": {
         "zh-cn": "Ubuntu",
+        "zh-tw": "Ubuntu",
         "en-us": "Ubuntu"
       },
       "unknown": {
         "zh-cn": "未知系统",
+        "zh-tw": "未知系統",
         "en-us": "Unknown"
       }
     },
     "string": {
       "devices": {
         "zh-cn": "设备",
+        "zh-tw": "裝置",
         "en-us": "Device"
       },
       "platform": {
         "zh-cn": "系统",
+        "zh-tw": "系統",
         "en-us": "OS"
       },
       "settings": {
         "zh-cn": "设置",
+        "zh-tw": "設定",
         "en-us": "Settings"
       }
     }
@@ -145,36 +177,44 @@
     "ele-title": {
       "copy": {
         "zh-cn": "复制",
+        "zh-tw": "複製",
         "en-us": "Copy"
       },
       "copied": {
         "zh-cn": "已复制",
+        "zh-tw": "已複製",
         "en-us": "Copied"
       },
       "qrcode": {
         "zh-cn": "二维码",
+        "zh-tw": "二維碼",
         "en-us": "QR Code"
       },
       "link-jump": {
         "zh-cn": "跳转",
+        "zh-tw": "跳轉",
         "en-us": "Jump"
       }
     },
     "message": {
       "copy-success": {
         "zh-cn": "复制成功",
+        "zh-tw": "複製成功",
         "en-us": "Copied"
       },
       "copy-failed": {
         "zh-cn": "复制失败",
+        "zh-tw": "複製失敗",
         "en-us": "Copy Failed"
       },
       "running-on-harmonyos": {
         "zh-cn": "鸿蒙系统暂不支持应用拉起",
+        "zh-tw": "鴻蒙系統暫不支援應用喚起",
         "en-us": "App launching is not available on HarmonyOS"
       },
       "touch-tip": {
         "zh-cn": "你当前处于桌面模式，若有需要请切换到移动模式",
+        "zh-tw": "你目前處於桌面模式，若有需要請切換至行動模式",
         "en-us": "You're in desktop mode. Switch to mobile mode if needed"
       }
     }
