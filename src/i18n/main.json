@@ -47,10 +47,12 @@
     "youtube": {
       "zh-cn": "YouTube",
       "en-us": "YouTube"
-    },"kuaishou": {
+    },
+    "kuaishou": {
       "zh-cn": "快手",
       "en-us": "Kwai"
-    }, "bluesky": {
+    },
+    "bluesky": {
       "zh-cn": "Bluesky",
       "en-us": "Bluesky"
     }
@@ -169,7 +171,11 @@
       },
       "running-on-harmonyos": {
         "zh-cn": "鸿蒙系统暂不支持应用拉起",
-        "en-us": "App launching is not currently supported on HarmonyOS"
+        "en-us": "App launching is not available on HarmonyOS"
+      },
+      "touch-tip": {
+        "zh-cn": "你当前处于桌面模式，若有需要请切换到移动模式",
+        "en-us": "You're in desktop mode. Switch to mobile mode if needed"
       }
     }
   }
