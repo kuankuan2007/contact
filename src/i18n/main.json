@@ -69,6 +69,10 @@
       "zh-cn": "Bluesky",
       "zh-tw": "Bluesky",
       "en-us": "Bluesky"
+    },"timeline": {
+      "zh-cn": "行程",
+      "zh-tw": "行程",
+      "en-us": "Itinerary"
     }
   },
   "contact-group": {

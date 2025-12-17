@@ -132,6 +132,16 @@ export const mainContactInfoList: ContactInfoList = [
     name: 'pypi',
     data: [{ main: 'kuankuan', link: 'https://pypi.org/user/kuankuan' }],
   },
+  {
+    name: 'timeline',
+    data: [
+      {
+        main: 'Timeline',
+        link: 'https://timeline.pages.kuankuan.site/',
+        copy: 'https://timeline.pages.kuankuan.site/',
+      },
+    ],
+  },
 ];
 export const contactGroupConfig: {
   name: string;
@@ -152,9 +162,10 @@ export const contactGroupConfig: {
     data: [
       { id: 'qq', type: [{ src: 'furry', target: void 0 }] },
       { id: 'wechat', type: [{ src: 'furry', target: void 0 }] },
-      { id: 'email', type: [{ src: 'furry', target: void 0 }] },
+      'timeline',
       'douyin',
       'bilibili',
+      { id: 'email', type: [{ src: 'furry', target: void 0 }] },
     ],
   },
   {
