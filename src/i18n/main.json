@@ -23,7 +23,7 @@
     "douyin": {
       "zh-cn": "抖音",
       "zh-tw": "抖音",
-      "en-us": "TikTok"
+      "en-us": "Douyin"
     },
     "wechat": {
       "zh-cn": "微信",
@@ -69,6 +69,10 @@
       "zh-cn": "Bluesky",
       "zh-tw": "Bluesky",
       "en-us": "Bluesky"
+    },"timeline": {
+      "zh-cn": "行程",
+      "zh-tw": "行程",
+      "en-us": "Itinerary"
     }
   },
   "contact-group": {
