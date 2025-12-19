@@ -33,7 +33,6 @@ const groupName = defineModel<string>('group')
 const activeGroup = ref<number>(1);
 
 watch(() => groupName.value, (newValue) => {
-  console.log(newValue)
   const index = groupedContactInfoList.findIndex(i => i.name === newValue)
   if (index === -1) {
     groupName.value = groupedContactInfoList[0]!.name

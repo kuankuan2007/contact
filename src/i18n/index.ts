@@ -55,7 +55,8 @@ export const i18n = createI18n({
   legacy: false,
   locale: language.value,
   fallbackLocale: 'en-us',
-  messages: messages as any, // eslint-disable-line
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  messages: messages as any,
 });
 window.addEventListener('languagechange', () => {
   browserLanguage.value = getBrowserLanguage();
