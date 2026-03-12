@@ -1,6 +1,6 @@
 import '@/styles/main.scss';
 import '@/scripts/theme.ts';
-import { i18n } from './i18n';
+import i18nInstance from './i18n';
 
 import { createApp } from 'vue';
 import App from './App.vue';
@@ -23,6 +23,6 @@ window.addEventListener('error', (e) => {
 })();
 
 const app = createApp(App);
-app.use(i18n);
+app.use(i18nInstance.i18n);
 
 app.mount('#app');

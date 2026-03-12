@@ -8,7 +8,7 @@
 import { emitEvent } from '@/scripts/event';
 import KIcon from './KIcon.vue';
 import KSmallButton from './KSmallButton.vue';
-import { tRef } from '@/i18n';
+import i18nInstance from '@/i18n';
 
 const props = defineProps<{
   content: string;
@@ -29,7 +29,7 @@ const id = computed(() => {
   return showSuccess.value ? 'tick' : 'copy';
 })
 const buttonTitle = computed(() => {
-  return showSuccess.value ? 'string.ele-title.copied' : 'string.ele-title.copy'
+  return showSuccess.value ? 'string.ele-title.copied' : 'string.ele-title.copy';
 })
 let lastTimeout: number;
 function copy() {
@@ -44,10 +44,10 @@ function copy() {
     }
   }
   catch (err) {
-    emitEvent(tRef('string.message.copy-failed'), 'warn');
+    emitEvent(i18nInstance.tRef('string.message.copy-failed'), 'warn');
     throw err;
   }
-  emitEvent(tRef('string.message.copy-success'), 'info');
+  emitEvent(i18nInstance.tRef('string.message.copy-success'), 'info');
   showSuccess.value = true;
   clearTimeout(lastTimeout);
   lastTimeout = window.setTimeout(() => {

@@ -97,7 +97,7 @@ function prev() {
 </script>
 <style scoped lang="scss">
 @use '@/styles/theme' as *;
-@use 'sass:color';
+;
 
 .contact-info-main {
   position: fixed;
@@ -158,9 +158,9 @@ function prev() {
     opacity: 1;
   }
 
-  @include useTheme {
-    border-color: getTheme('color');
-    background: rgba(getTheme('background'), 0.5);
+  @include theme.use {
+    border-color: theme.get('color');
+    background: rgba(theme.get('background'), 0.5);
   }
 
   button {
@@ -186,15 +186,15 @@ function prev() {
       right: 0.15em;
     }
 
-    @include useTheme {
-      color: getTheme('color');
+    @include theme.use {
+      color: theme.get('color');
     }
 
     &:hover,
     &:focus {
-      @include useTheme {
-        border-color: color.mix(getTheme('color'), getTheme('active-color'), 50%);
-        color: color.mix(getTheme('color'), getTheme('active-color'), 50%);
+      @include theme.use {
+        border-color: color.mix(theme.get('color'), theme.get('active-color'), 50%);
+        color: color.mix(theme.get('color'), theme.get('active-color'), 50%);
       }
     }
   }

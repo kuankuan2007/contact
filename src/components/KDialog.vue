@@ -23,7 +23,7 @@ defineExpose({
 </script>
 <style scoped lang="scss">
 @use '@/styles/theme.scss' as *;
-@use "sass:color";
+
 
 dialog {
   border: none;
@@ -35,9 +35,9 @@ dialog {
     border-radius: 5em;
   }
 
-  @include useTheme {
-    background: getTheme('background');
-    color: getTheme('color');
+  @include theme.use {
+    background: theme.get('background');
+    color: theme.get('color');
   }
 
   &::backdrop {

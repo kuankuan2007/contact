@@ -32,10 +32,10 @@
   transition: color 0.3s,
   opacity 0.3s;
 
-  @include useTheme {
+  @include theme.use {
 
     &:hover {
-      color: getTheme('active-color');
+      color: theme.get('active-color');
     }
   }
 }

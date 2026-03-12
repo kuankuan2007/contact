@@ -1,12 +1,12 @@
 <template>
-  <k-folding-list :data="languageList" class="language" :class="{ 'first-load': firstLoad }"
+  <k-folding-list :data="i18nInstance.languageList" class="language" :class="{ 'first-load': firstLoad }"
     v-model:active="languageValue">
     <template #title>
       <div class="button">
         <k-icon id="language" />
         <div class="language-text">Language</div>
         <div class="current-language-box">
-          <div class="current-language">{{ languageName[language as keyof typeof languageName] }}</div>
+          <div class="current-language">{{ i18nInstance.languageName(i18nInstance.language.value) }}</div>
         </div>
       </div>
     </template>
@@ -15,21 +15,21 @@
 <script setup lang="ts">
 import KFoldingList from './KFoldingList.vue';
 import KIcon from './KIcon.vue';
-import { languageList, language, languageName, localSettingLanguage } from '@/i18n/index';
+import i18nInstance from '@/i18n/index';
 defineProps<{
   firstLoad: boolean;
 }>();
 const languageValue = computed({
   get: () => {
-    return localSettingLanguage.value
+    return i18nInstance.language.value
   }, set: (value) => {
-    language.value = value
+    i18nInstance.language.value = value
   }
 })
 </script>
 <style scoped lang="scss">
 @use '@/styles/theme' as *;
-@use 'sass:color';
+;
 
 
 

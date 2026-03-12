@@ -6,13 +6,20 @@
     <div class="fold-box">
       <ul class="fold-list">
         <li class="fold-item" v-for="{ id, name } in data" :key="id">
-          <button class="fold-list-button" type="button" @click="active = id" :class="{ active: active === id }">{{
-            name }}</button>
+          <slot :data="{ id, name }" name="content">
+            <button
+              class="fold-list-button"
+              type="button"
+              @click="active = id"
+              :class="{ active: active === id }"
+            >
+              {{ name }}
+            </button>
+          </slot>
         </li>
       </ul>
     </div>
   </div>
-
 </template>
 <script setup lang="ts">
 import type { Ref } from 'vue';
@@ -23,18 +30,18 @@ const active = defineModel<string>('active');
 </script>
 <style scoped lang="scss">
 @use '@/styles/theme' as *;
-@use 'sass:color';
-
 .select-list {
   border: 0.1em solid transparent;
   border-radius: 1.5em;
   transform-origin: top center;
-  transition: right 0.3s, transform 0.3s;
+  transition:
+    right 0.3s,
+    transform 0.3s;
   overflow: hidden;
   backdrop-filter: blur(0.2em);
-  @include useTheme {
-    border-color: getTheme('color');
-    background: rgba(getTheme('background'), 0.8);
+  @include theme.use {
+    border-color: theme.get('color');
+    background: rgba(theme.get('background'), 0.8);
   }
 
   &:hover,
@@ -48,7 +55,6 @@ const active = defineModel<string>('active');
 
   .select-title {
     padding: 0.3em 1em;
-
   }
 }
 
@@ -66,9 +72,14 @@ const active = defineModel<string>('active');
     display: flex;
     flex-direction: column;
     row-gap: 0.1em;
+    .fold-item{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     .fold-list-button {
-      width: 100%;
       background: none;
       cursor: pointer;
       font-size: 1em;
@@ -76,28 +87,27 @@ const active = defineModel<string>('active');
       border: none;
       margin: 0;
       padding: 0;
-      transition: color 0.3s, background 0.3s;
+      transition:
+        color 0.3s,
+        background 0.3s;
       text-align: center;
 
-
-      @include useTheme {
-        color: getTheme('color');
+      @include theme.use {
+        color: theme.get('color');
       }
 
       &.active {
-        @include useTheme {
-          color: color.mix(getTheme('active-color'), getTheme('color'), 50%);
+        @include theme.use {
+          color: color.mix(theme.get('active-color'), theme.get('color'), 50%);
         }
       }
 
       &:hover,
       &:focus {
-        @include useTheme {
-          background: color.mix(getTheme('background'), getTheme('active-color'), 80%);
+        @include theme.use {
+          background: color.mix(theme.get('background'), theme.get('active-color'), 80%);
         }
       }
-
-
     }
   }
 }

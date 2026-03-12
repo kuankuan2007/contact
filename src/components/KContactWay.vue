@@ -35,7 +35,7 @@ function onClick(event: MouseEvent) {
 </script>
 <style scoped lang="scss">
 @use '@/styles/theme' as *;
-@use 'sass:color';
+;
 
 .way-cmp {
   display: flex;
@@ -72,20 +72,20 @@ a.way-link {
 
     transition: transform 0.3s;
 
-    @include useTheme {
-      border-bottom-color: getTheme('active-color');
+    @include theme.use {
+      border-bottom-color: theme.get('active-color');
     }
   }
 
-  @include useTheme {
-    color: color.mix(getTheme('color'), getTheme('active-color'), 50%);
+  @include theme.use {
+    color: color.mix(theme.get('color'), theme.get('active-color'), 50%);
   }
 
   &:hover,
   &:focus,
   &:active {
-    @include useTheme {
-      color: getTheme('active-color');
+    @include theme.use {
+      color: theme.get('active-color');
 
     }
 
@@ -98,8 +98,8 @@ a.way-link {
     }
 
     &~.copy-button {
-      @include useTheme {
-        color: getTheme('active-color');
+      @include theme.use {
+        color: theme.get('active-color');
       }
     }
 
@@ -115,8 +115,8 @@ a.way-link {
 .qrcode-button {
   transition: color 0.3s, opacity 0.3s;
 
-  @include useTheme {
-    color: color.mix(getTheme('color'), getTheme('active-color'), 50%);
+  @include theme.use {
+    color: color.mix(theme.get('color'), theme.get('active-color'), 50%);
 
   }
 
