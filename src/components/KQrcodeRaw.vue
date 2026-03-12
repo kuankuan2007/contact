@@ -3,7 +3,7 @@
 </template>
 <script setup lang="ts">
 import qrcode from 'qrcode';
-import { computedSizeRef } from '@/scripts/sizeRef';
+import { computedSizeRef } from '@kuankuan/assist-2026/ref/sizeRef';
 const props = defineProps<{
   data: string;
 }>();

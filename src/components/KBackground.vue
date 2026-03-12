@@ -13,7 +13,7 @@ import furrySvg from '@/assets/furry-mask.svg?raw';
 </script>
 <style scoped lang="scss">
 @use '@/styles/theme' as *;
-@use 'sass:color';
+;
 
 .background {
   pointer-events: none;
@@ -40,14 +40,14 @@ import furrySvg from '@/assets/furry-mask.svg?raw';
   height: auto;
   opacity: 0.1;
 
-  @include useTheme {
-    filter: drop-shadow(getTheme('color') 0 0 0.3em);
+  @include theme.use {
+    filter: drop-shadow(theme.get('color') 0 0 0.3em);
   }
 
   &:deep(svg) {
-    @include useTheme {
-      fill: getTheme('color');
-      color: getTheme('color');
+    @include theme.use {
+      fill: theme.get('color');
+      color: theme.get('color');
     }
   }
 }

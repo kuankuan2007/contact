@@ -1,4 +1,4 @@
-import { tRef } from '@/i18n';
+import i18nInstance from '@/i18n';
 import { emitEvent } from './event';
 
 export const platforms = [
@@ -51,7 +51,7 @@ watch(
   (newVal) => {
     if (newVal === 'open-harmony') {
       setTimeout(() => {
-        emitEvent(tRef('string.message.running-on-harmonyos'), 'info');
+        emitEvent(i18nInstance.tRef('string.message.running-on-harmonyos'), 'info');
       });
     }
   },
@@ -63,7 +63,7 @@ function torchTip() {
   if (nowEnv.value.device === 'desktop' && !torchTipShown) {
     torchTipShown = true;
     window.removeEventListener('touchstart', torchTip);
-    emitEvent(tRef('string.message.touch-tip'), 'info');
+    emitEvent(i18nInstance.tRef('string.message.touch-tip'), 'info');
   }
 }
 
@@ -71,9 +71,9 @@ window.addEventListener('touchstart', torchTip);
 
 export const platformsData = platforms.map((i) => ({
   id: i,
-  name: tRef(`settings.platforms.${i}`),
+  name: i18nInstance.tRef(`settings.platforms.${i}`),
 }));
 export const devicesData = devices.map((i) => ({
   id: i,
-  name: tRef(`settings.devices.${i}`),
+  name: i18nInstance.tRef(`settings.devices.${i}`),
 }));

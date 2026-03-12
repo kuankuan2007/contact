@@ -9,8 +9,13 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import postcssPresetEnv from 'postcss-preset-env';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
-import VitePluginBuildInfo from './vite-plugin/build-info';
-import VitePluginKI18nConfigLoad from './vite-plugin/ki18nConfigLoad';
+import VitePluginBuildInfo from '@kuankuan/assist-2026/plugins/buildInfo';
+import VitePluginKI18nConfigLoad from '@kuankuan/assist-2026/plugins/ki18nConfigLoad';
+
+const sassAddition = `
+@use '@/styles/theme.scss';
+@use 'sass:math';
+@use 'sass:color';`;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -46,6 +51,14 @@ export default defineConfig({
         }),
         cssnano(),
       ],
+    },
+    preprocessorOptions: {
+      scss: {
+        additionalData: sassAddition,
+      },
+      sass: {
+        additionalData: sassAddition,
+      },
     },
   },
   resolve: {

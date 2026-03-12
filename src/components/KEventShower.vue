@@ -48,7 +48,7 @@ onUnmounted(() => {
 </script>
 <style scoped lang="scss">
 @use '@/styles/theme' as *;
-@use 'sass:color';
+;
 
 .event-shower {
   position: fixed;
@@ -82,10 +82,10 @@ onUnmounted(() => {
   display: flex;
   transform: translate(-50%, 0);
 
-  @include useTheme {
-    border-color: getTheme('color');
-    background-color: getTheme('background');
-    color: getTheme('color');
+  @include theme.use {
+    border-color: theme.get('color');
+    background-color: theme.get('background');
+    color: theme.get('color');
   }
 
   .event-content {
