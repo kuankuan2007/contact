@@ -6,7 +6,7 @@
         <k-icon id="language" />
         <div class="language-text">Language</div>
         <div class="current-language-box">
-          <div class="current-language">{{ i18nInstance.languageName(i18nInstance.language.value) }}</div>
+          <div class="current-language">{{ i18nInstance.languageName(i18nInstance.language.value).value }}</div>
         </div>
       </div>
     </template>

@@ -193,8 +193,8 @@ function prev() {
     &:hover,
     &:focus {
       @include theme.use {
-        border-color: color.mix(theme.get('color'), theme.get('active-color'), 50%);
-        color: color.mix(theme.get('color'), theme.get('active-color'), 50%);
+        border-color: theme.mix("color","active-color", 10%);
+        color: theme.mix("color","active-color", 10%);
       }
     }
   }

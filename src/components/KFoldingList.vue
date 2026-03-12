@@ -74,12 +74,11 @@ const active = defineModel<string>('active');
     row-gap: 0.1em;
     .fold-item{
       width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     .fold-list-button {
+      display: block;
+      width: 100%;
       background: none;
       cursor: pointer;
       font-size: 1em;
