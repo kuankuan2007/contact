@@ -61,14 +61,14 @@ const languageValue = computed({
     display: grid;
     grid-auto-rows: max-content;
     grid-template-columns: 0fr;
-    transition: grid-template-columns 0.3s;
+    @include motion.transition(grid-template-columns 0.3s);
 
     .language.first-load & {
       grid-template-columns: 1fr;
     }
 
     .current-language {
-      transition: padding-left 0.3s;
+      @include motion.transition(padding-left 0.3s);
 
       .language.first-load & {
         padding-left: 0.5em;

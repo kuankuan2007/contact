@@ -60,6 +60,6 @@ defineExpose({
 </script>
 <style scoped lang="scss">
 .copy-cmp {
-  transition: opacity 0.3s ease;
+  @include motion.transition(opacity 0.3s ease);
 }
 </style>

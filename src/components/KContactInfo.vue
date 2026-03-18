@@ -113,7 +113,7 @@ function prev() {
 
 @mixin disable-transition {
   .disable-transition & {
-    transition: none;
+    @include motion.transition(none);
   }
 }
 
@@ -122,7 +122,7 @@ function prev() {
   align-items: center;
   $width: 80vw;
   width: $width;
-  transition: transform 0.3s ease;
+  @include motion.transition(transform 0.3s ease);
   @include disable-transition;
 
   .contact-info-group-item {
@@ -133,7 +133,7 @@ function prev() {
     align-items: center;
     opacity: 0;
     transform: scale(0.5);
-    transition: opacity 0.3s, transform 0.3s;
+    @include motion.transition(opacity 0.3s, transform 0.3s);
     @include disable-transition;
 
     &.active {
@@ -152,7 +152,7 @@ function prev() {
   position: relative;
   backdrop-filter: blur(0.1em);
   opacity: 0.5;
-  transition: opacity 0.3s;
+  @include motion.transition(opacity 0.3s);
   &:hover,
   &:focus-within {
     opacity: 1;
@@ -176,7 +176,7 @@ function prev() {
     top: 50%;
     transform: translate(0, -50%);
     z-index: 1;
-    transition: color 0.3s, border-color 0.3s;
+    @include motion.transition(color 0.3s, border-color 0.3s);
 
     &.left-button {
       left: 0.15em;
@@ -211,7 +211,7 @@ function prev() {
       overflow: visible;
 
 
-      transition: transform 0.3s ease;
+      @include motion.transition(transform 0.3s ease);
 
       @include disable-transition;
 
@@ -221,7 +221,7 @@ function prev() {
         width: $size;
         text-align: center;
         opacity: 0.6;
-        transition: opacity 0.3s ease;
+        @include motion.transition(opacity 0.3s ease);
 
         @include disable-transition;
 

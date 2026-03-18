@@ -50,7 +50,7 @@ dialog {
   position: absolute;
   top: 0.8em;
   right: 0.8em;
-  transition: color 0.3s;
+  @include motion.transition(color 0.3s);
   z-index: 1;
 
   .closs-button {

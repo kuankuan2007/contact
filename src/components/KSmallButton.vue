@@ -29,8 +29,7 @@
     border-color: currentColor;
   }
 
-  transition: color 0.3s,
-  opacity 0.3s;
+  @include motion.transition(color 0.3s, opacity 0.3s);
 
   @include theme.use {
 

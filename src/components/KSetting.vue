@@ -84,7 +84,7 @@ function onButtonClick() {
     overflow: hidden;
     display: grid;
     grid-template-columns: 0fr;
-    transition: grid-template-columns 0.3s;
+    @include motion.transition(grid-template-columns 0.3s);
 
     .setting-title {
       white-space: nowrap;
@@ -103,7 +103,7 @@ function onButtonClick() {
   flex-direction: column;
   row-gap: 0.5em;
   transform: translate(calc(100% + 5em), 0);
-  transition: transform 0.3s;
+  @include motion.transition(transform 0.3s);
 
   .k-setting:focus-within &,
   .k-setting.active & {

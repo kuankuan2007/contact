@@ -28,7 +28,7 @@ button.theme-button {
   all: unset;
   font-size: 1.25em;
   cursor: pointer;
-  transition: 0.3s;
+  @include motion.transition(0.3s);
   padding: 0.1em;
   border: 0.1em solid transparent;
   border-radius: 0.3em;

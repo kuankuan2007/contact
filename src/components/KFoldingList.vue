@@ -34,9 +34,7 @@ const active = defineModel<string>('active');
   border: 0.1em solid transparent;
   border-radius: 1.5em;
   transform-origin: top center;
-  transition:
-    right 0.3s,
-    transform 0.3s;
+  @include motion.transition(right 0.3s, transform 0.3s);
   overflow: hidden;
   backdrop-filter: blur(0.2em);
   @include theme.use {
@@ -62,7 +60,7 @@ const active = defineModel<string>('active');
   display: grid;
   grid-template-rows: 0fr;
   grid-template-columns: 1fr;
-  transition: grid-template-rows 0.3s;
+  @include motion.transition(grid-template-rows 0.3s);
 
   .fold-list {
     list-style: none;
@@ -72,7 +70,7 @@ const active = defineModel<string>('active');
     display: flex;
     flex-direction: column;
     row-gap: 0.1em;
-    .fold-item{
+    .fold-item {
       width: 100%;
     }
 
@@ -86,9 +84,7 @@ const active = defineModel<string>('active');
       border: none;
       margin: 0;
       padding: 0;
-      transition:
-        color 0.3s,
-        background 0.3s;
+      @include motion.transition(color 0.3s, background 0.3s);
       text-align: center;
 
       @include theme.use {

@@ -1,5 +1,7 @@
 import '@/styles/main.scss';
 import '@/scripts/theme.ts';
+import "@kuankuan/assist-2026/init"
+
 import i18nInstance from './i18n';
 
 import { createApp } from 'vue';

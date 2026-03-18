@@ -62,7 +62,7 @@ function onClick(event: MouseEvent) {
 
 a.way-link {
   text-decoration: none;
-  transition: color 0.3s;
+  @include motion.transition(color 0.3s);
   padding-bottom: 0.1em;
   outline: none;
   position: relative;
@@ -87,7 +87,7 @@ a.way-link {
     transform-origin: left;
     transform: scaleX(0);
 
-    transition: transform 0.3s;
+    @include motion.transition(transform 0.3s);
 
     @include theme.use {
       border-bottom-color: theme.mix('active-color', 'background', 90%);
@@ -127,9 +127,7 @@ a.way-link {
 
 .copy-button,
 .qrcode-button {
-  transition:
-    color 0.3s,
-    opacity 0.3s;
+  @include motion.transition(color 0.3s, opacity 0.3s);
 
   @include theme.use {
     color: color.mix(theme.get('color'), theme.get('active-color'), 50%);

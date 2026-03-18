@@ -55,7 +55,7 @@ onUnmounted(() => {
   top: 6em;
   left: 50%;
   font-size: 0.9em;
-  transition: transform 0.5s ease;
+  @include motion.transition(transform 0.5s ease);
   display: flex;
   justify-content: center;
 
@@ -97,7 +97,7 @@ onUnmounted(() => {
 .event-list-enter-active,
 .event-list-leave-active,
 .event-list-move {
-  transition: all 0.5s ease;
+  @include motion.transition(all 0.5s ease);
 }
 
 .event-list-enter-from,

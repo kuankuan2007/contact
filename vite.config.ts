@@ -14,6 +14,7 @@ import VitePluginKI18nConfigLoad from '@kuankuan/assist-2026/plugins/ki18nConfig
 
 const sassAddition = `
 @use '@/styles/theme.scss';
+@use '@kuankuan/assist-2026/styles/motion.scss';
 @use 'sass:math';
 @use 'sass:color';`;
 
