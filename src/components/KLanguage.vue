@@ -21,7 +21,8 @@ defineProps<{
 }>();
 const languageValue = computed({
   get: () => {
-    return i18nInstance.language.value
+    console.log(i18nInstance);
+    return i18nInstance.localSettingLanguage.value
   }, set: (value) => {
     i18nInstance.language.value = value
   }
