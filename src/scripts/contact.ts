@@ -142,6 +142,10 @@ export const mainContactInfoList: ContactInfoList = [
       },
     ],
   },
+  {
+    name: 'fursuittv',
+    data: [{ main: 'kuankuan', link: 'https://fursuit.tv/@kuankuan' }],
+  },
 ];
 export const contactGroupConfig: {
   name: string;
@@ -166,6 +170,7 @@ export const contactGroupConfig: {
       'douyin',
       'bilibili',
       { id: 'email', type: [{ src: 'furry', target: void 0 }] },
+      'fursuittv',
     ],
   },
   {
