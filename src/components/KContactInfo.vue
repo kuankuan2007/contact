@@ -122,7 +122,7 @@ function prev() {
   align-items: center;
   $width: 80vw;
   width: $width;
-  @include motion.transition(transform 0.3s ease);
+  @include motion.transition(transform 0.5s ease);
   @include disable-transition;
 
   .contact-info-group-item {
@@ -169,6 +169,11 @@ function prev() {
     border: solid 0.1em transparent;
     border-radius: 99999px;
     cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
     font-size: 1em;
@@ -179,11 +184,11 @@ function prev() {
     @include motion.transition(color 0.3s, border-color 0.3s);
 
     &.left-button {
-      left: 0.15em;
+      left: 0;
     }
 
     &.right-button {
-      right: 0.15em;
+      right: 0;
     }
 
     @include theme.use {
@@ -203,7 +208,7 @@ function prev() {
     $size: 10em;
     width: $size;
     overflow: hidden;
-    mask: linear-gradient(to right, transparent 0%, white 15%, white 85%, transparent 100%);
+    mask: linear-gradient(to right, transparent 5%, white 20%, white 80%, transparent 95%);
 
     .group-name-list {
       width: $size;
@@ -211,7 +216,7 @@ function prev() {
       overflow: visible;
 
 
-      @include motion.transition(transform 0.3s ease);
+      @include motion.transition(transform 0.5s ease);
 
       @include disable-transition;
 
