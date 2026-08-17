@@ -69,14 +69,21 @@
       "zh-cn": "Bluesky",
       "zh-tw": "Bluesky",
       "en-us": "Bluesky"
-    },"timeline": {
+    },
+    "timeline": {
       "zh-cn": "行程",
       "zh-tw": "行程",
       "en-us": "Itinerary"
-    },"fursuittv": {
+    },
+    "fursuittv": {
       "zh-cn": "兽频道",
       "zh-tw": "兽頻道",
       "en-us": "Fursuit.tv"
+    },
+    "qrz_com": {
+      "zh-cn": "QRZ",
+      "zh-tw": "QRZ",
+      "en-us": "QRZ"
     }
   },
   "contact-group": {
@@ -99,6 +106,11 @@
       "zh-cn": "社交媒体",
       "zh-tw": "社交媒體",
       "en-us": "Social Media"
+    },
+    "ham": {
+      "zh-cn": "业余无线电",
+      "zh-tw": "業餘無線電",
+      "en-us": "Ham Radio"
     }
   },
   "contact-type": {
@@ -111,6 +123,11 @@
       "zh-cn": "福瑞",
       "zh-tw": "福瑞",
       "en-us": "Furry"
+    },
+    "ham": {
+      "zh-cn": "无线电",
+      "zh-tw": "無線電",
+      "en-us": "Ham Radio"
     }
   },
   "settings": {

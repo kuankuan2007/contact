@@ -21,7 +21,11 @@ class Email implements ContactInfo {
 export const mainContactInfoList: ContactInfoList = [
   {
     name: 'email',
-    data: [new Email('3169748076@qq.com', 'furry'), new Email('2163826131@qq.com', 'personal')],
+    data: [
+      new Email('3169748076@qq.com', 'furry'),
+      new Email('2163826131@qq.com', 'personal'),
+      new Email('BH8HKH@qq.com', 'ham'),
+    ],
   },
   {
     name: 'qq',
@@ -146,6 +150,10 @@ export const mainContactInfoList: ContactInfoList = [
     name: 'fursuittv',
     data: [{ main: 'kuankuan', link: 'https://fursuit.tv/@kuankuan' }],
   },
+  {
+    name: 'qrz_com',
+    data: [{ main: 'BH8HKH', link: 'https://www.qrz.com/db/BH8HKH' }],
+  },
 ];
 export const contactGroupConfig: {
   name: string;
@@ -171,6 +179,14 @@ export const contactGroupConfig: {
       'bilibili',
       { id: 'email', type: [{ src: 'furry', target: void 0 }] },
       'fursuittv',
+    ],
+  },
+  {
+    name: 'ham',
+    data: [
+      { id: 'email', type: [{ src: 'ham', target: void 0 }] },
+      'qrz_com',
+      { id: 'wechat', type: [{ src: 'personal', target: void 0 }] },
     ],
   },
   {
