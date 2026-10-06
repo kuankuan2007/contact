@@ -24,5 +24,7 @@ const showDebug = ref(false)
 <style scoped lang="scss">
 .menu {
   font-size: min(1.8rem, 3vw);
+  position: relative;
+  z-index: 999;
 }
 </style>
